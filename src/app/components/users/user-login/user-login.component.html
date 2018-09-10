@@ -1,61 +1,57 @@
 <div class="form-gap"></div>
-<!-- class="d-flex justify-content-center" -->
 
-<div class="d-flex justify-content-center">
-  <div class="row  background-theme">
-    <div class="col-md-12">
+<div class="panel panel-default d-flex justify-content-center">
+  <div class="panel-body background-theme">
+    <div class="row">
+      <div class="col-12">
 
-      <div class="text-center">
+        <div class="text-center">
+          <h3><i class="fa fa-lock fa-4x"></i></h3>
+          <h2 class="text-center">Sign in</h2>
+        </div>
         <br />
-        <h3><i class="fa fa-lock fa-4x"></i></h3>
-        <h2 class="text-center">Sign in</h2>
-        <br />
+
+        <form class="form" #loginForm="ngForm" (ngSubmit)="signIn(loginForm.value)">
+          <div class="form-group">
+            <label class="sr-only" for="inputEmail">Email address</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-user"></i></div>
+              </div>
+              <input type="email" ngModel name="username" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                placeholder="Email Address" required autofocus>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="sr-only" for="inputPassword">Password</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-lock"></i></div>
+              </div>
+              <input type="password" ngModel name="password" class="form-control" id="inputPassword" placeholder="Password"
+                required>
+            </div>
+            <div class="help-block text-right"><a routerLink="/forgotPassword">Forget the password ?</a></div>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid">
+              Sign in
+            </button>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> keep me logged-in
+            </label>
+          </div>
+        </form>
       </div>
-
-      <!-- <h6>Login</h6>
-    <hr />
-    <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div> -->
-
-      <form class="form" #loginForm="ngForm" (ngSubmit)="signIn(loginForm.value)">
-        <div class="form-group">
-          <label class="sr-only" for="inputEmail">Email address</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><i class="fa fa-user"></i></div>
-            </div>
-            <input type="email" ngModel name="username" class="form-control" id="inputEmail" aria-describedby="emailHelp"
-              placeholder="Email Address" required autofocus>
-          </div>
+      <hr />
+      <div class="container">
+        <div class="row justify-content-center">
+          New here ? <a routerLink="/registration"><b>Join Us</b></a>
         </div>
-
-        <div class="form-group">
-          <label class="sr-only" for="inputPassword">Password</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><i class="fa fa-lock"></i></div>
-            </div>
-            <input type="password" ngModel name="password" class="form-control" id="inputPassword" placeholder="Password"
-              required>
-          </div>
-          <div class="help-block text-right"><a routerLink="/forgotPassword">Forget the password ?</a></div>
-        </div>
-
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid">
-            Sign in
-          </button>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> keep me logged-in
-          </label>
-        </div>
-      </form>
-    </div>
-    <hr />
-    <div class="container">
-      <div class="row justify-content-center">
-        New here ? <a href="#"><b>Join Us</b></a>
       </div>
     </div>
   </div>

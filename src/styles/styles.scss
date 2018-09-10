@@ -37,8 +37,19 @@ body{
     /* Chrome 10-25, Safari 5.1-6 */
     //background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
     border: 1px solid #345578;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .form-gap {
     padding-top: 50px;
+}
+
+button.disabled {
+    opacity: 0.65; 
+    cursor: not-allowed !important;
+  }
+
+.user-screen {
+    width: 430px;
 }

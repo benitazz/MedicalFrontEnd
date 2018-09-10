@@ -12,7 +12,7 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 const userRoutes: Routes = [
   // { path: '',  component: UserLoginComponent },
   { path: 'login',  component: UserLoginComponent },
-  { path: 'userRegistration', component: UserRegistrationComponent },
+  { path: 'registration', component: UserRegistrationComponent },
   { path: 'forgotPassword', component: ForgotPasswordComponent },
   { path: 'resetPassword', component: ResetPasswordComponent },
   { path: 'changePassword', component: ChangePasswordComponent }
