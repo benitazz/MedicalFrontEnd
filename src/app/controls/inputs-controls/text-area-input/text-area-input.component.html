@@ -1,0 +1,18 @@
+<div *ngIf="displaytop">
+    <label class="control-label float-right">{{innerValueLength}}/{{maxlength}}</label>
+  </div>
+  <textarea name="textInput" 
+            class="form-control noteInputArea" 
+            rows="4" 
+            alphaNumericSpaceUnderscoreDash
+            [maxlength]="maxlength" 
+            [minlength]="minlength"
+            [disabled]="!disabled" 
+            [(ngModel)]="innerValue"
+            (click)="onTouched()">
+  </textarea>
+  
+  <div *ngIf="!displaytop">
+    <label class="control-label float-right">{{innerValueLength}}/{{maxlength}}</label>
+  </div>
+  

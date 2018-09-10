@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-sm-10 pl-0">
+    <div class="media">
+      <i class="fa fa-credit-card fa-3x pr-2" aria-hidden="true"></i>
+      <div class="media-body">
+        <h6 class="media-head">{{fileTransaction?.cellNumber}}</h6>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <span>{{fileTransaction?.name}}</span>,
+            <span>{{fileTransaction?.surname}}</span>,
+            <span [ngClass]="statusClass"> {{transactionStatus?.name}}</span>
+          </div>
+
+          <div class="col-sm-6">
+            <currency-format [amount]="fileTransaction?.amount"></currency-format>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-sm-2">
+    <span class="float-right">
+      <i class="fa" [ngClass]="{'fa-chevron-down': !isCollapsed, 'fa-chevron-up': isCollapsed}" (click)="toggle()"></i>
+    </span>
+  </div>
+</div>
+
+<div [collapse]="!isCollapsed">
+  <hr>
+  <section>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label for="staticEmail" class="col-lg-4 col-form-label">Payment date</label>
+          <div class="col-lg-8">
+            <date-format [date]="fileTransaction?.paidDate"></date-format>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label for="staticEmail" class="col-lg-4 col-form-label">Payment type</label>
+          <div class="col-lg-8">
+            <input type="text" readonly class="form-control-plaintext tertiaryText" id="staticEmail" [ngModel]="fileTransactionType">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label for="staticEmail" class="col-lg-4 col-form-label">Payment status</label>
+          <div class="col-lg-8">
+            <input type="text" readonly class="form-control-plaintext" [ngClass]="statusClass" [ngModel]="transactionStatus?.name">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,9 @@
+@import '../../../../styles/style-set.scss';
+
+.separator { 
+    border-right: 1px solid $secondaryTextColor; 
+    display: inline-block; 
+    margin-left: -5px;
+    height: 12px; 
+    vertical-align: middle; 
+} 

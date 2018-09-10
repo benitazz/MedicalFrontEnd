@@ -1,0 +1,62 @@
+<div bsModal #confirmationModal="bs-modal" class="modal fade" role="dialog" [config]="{backdrop: 'static',keyboard: false}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <div class="content">
+            <div [ngSwitch]="confirmationMessage.type">
+              <div *ngSwitchCase="1">
+                <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+              </div>
+              <div *ngSwitchCase="2">
+                <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true"></i>
+              </div>
+              <div *ngSwitchCase="3">
+                <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+              </div>
+              <div *ngSwitchCase="4">
+                <i class="fa fa-question-circle fa-5x" aria-hidden="true"></i>
+              </div>
+              <div *ngSwitchDefault>
+                <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <h4>{{confirmationMessage.title}}</h4>
+          </div>
+          <hr>
+          <div class="content">
+            <h5>{{confirmationMessage.message}}</h5>
+          </div>
+          <hr>
+          <div>
+            <div [ngSwitch]="confirmationMessage.type">
+              <div *ngSwitchCase="1">
+                <button type="button" class="btn btn-default btn-block" (click)="hide(true)" data-dismiss="modal">{{buttonCloseText}}</button>
+              </div>
+              <div *ngSwitchCase="2">
+                <button type="button" class="btn btn-default btn-block" (click)="hide()" data-dismiss="modal">{{buttonCloseText}}</button>
+              </div>
+              <div *ngSwitchCase="3">
+                <button type="button" class="btn btn-block primaryButton col-xs-6" (click)="hide()" data-dismiss="modal">{{buttonDismissText}}</button>
+              </div>
+              <div *ngSwitchCase="4">
+                <div>
+                    <button type="button" class="btn btn-lg btn-block secondaryButton" (click)="hide()">{{buttonNoText}}</button>
+                    <button type="button" class="btn btn-lg btn-block primaryButton" (click)="save()" data-dismiss="modal">{{buttonYesText}}</button>  
+                </div>
+              </div>
+              <div *ngSwitchCase="5">
+                <button type="button" class="btn btn-block primaryButton" (click)="hide(true)" data-dismiss="modal">{{buttonOKText}}</button>
+              </div>
+              <div *ngSwitchDefault>
+                <button type="button" class="btn btn-block primaryButton" (click)="hide()" data-dismiss="modal">{{buttonDismissText}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

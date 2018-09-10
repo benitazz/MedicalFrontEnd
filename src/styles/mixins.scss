@@ -1,0 +1,162 @@
+@import 'style-set.scss';
+
+@mixin text-style($font, $size, $color, $bold: false, $case: none, $trunc: true) {
+  font-family: $font;
+  font-size: $size;
+  color: $color;
+  @if $trunc==true {
+    @include text-truncate();
+  }
+  @if $bold==true {
+    font-weight: bold;
+  }
+  @else {
+    font-weight: normal;
+  }
+  @if $case==lowercase {
+    text-transform: lowercase;
+  }
+  @if $case==uppercase {
+    text-transform: uppercase;
+  }
+  @if $case==capitalize {
+    text-transform: capitalize;
+  }
+  @if $case == sentence-case {
+    text-transform:lowercase;
+    &::first-letter{
+     text-transform:uppercase;
+    }
+  }
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin font-mix($family, $path) {
+  @font-face {
+    font-family: $family;
+    src: //url( $path + '.otf')  format('opentype'),
+    url($path + '.eot') format('eot'), url($path + '.woff') format('woff'), url($path + '.ttf') format('truetype'), url($path + '.svg#'+ $family) format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  }
+  @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin button-style($bgColor, $textColor, $borderColor,$case) {
+  background-color: $bgColor;
+  color: $textColor;
+  border: 1px solid $borderColor;
+  text-transform: $case;
+  &:hover {
+    background-color: $bgColor;
+    color: $textColor;
+  }
+  &:active {}
+  @if $case == capitalize{
+    text-transform: capitalize;
+  }
+}
+
+@mixin border-style($side) {
+  @if $side==top {
+    border-top: $controlBorderStyle $controlBorderWidth $controlBorderColor;
+  }
+  @else if $side==bottom {
+    border-bottom: $controlBorderStyle $controlBorderWidth $controlBorderColor;
+  }
+  @else if $side==all {
+    border: $controlBorderStyle $controlBorderWidth $controlBorderColor;
+  }
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin noPadding($side) {
+
+  @if $side == none {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  @if $side == right {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+  @if $side == left {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* this is for anything less or equal to 768px */
+@mixin extra-small-screen {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+/* this target the tablet, Ipad and above*/
+@mixin small-to-large-screen {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen($media) {
+  // Phone
+  @if $media==phone {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } // Tablet Portrait
+  @else if $media==tablet-portrait {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } // Tablet Landscape - Desktop
+  @else if $media==tablet-landscape-desktop {
+    @media (min-width: 768px) and (max-width: 979px) {
+      @content;
+    }
+  } // Large Desktop
+  @else if $media==large-desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } // Non-Retina
+  @else if $media==non-retina {
+    @media screen and (-webkit-max-device-pixel-ratio: 1) {
+      @content;
+    }
+  } // Retina Only
+  @else if $media==retina {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+    }
+  } // Custom breakpoint
+  @else {
+    @media ($media) {
+      @content;
+    }
+  }
+}
+

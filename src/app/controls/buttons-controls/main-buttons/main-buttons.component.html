@@ -1,0 +1,35 @@
+<!-- <div class="row"> -->
+    <!-- <div class="panel-body widget-container"> -->
+      <span class="float-right form-group">
+        <button *ngIf="showCancel" 
+                  type="button" 
+                  class="btn secondaryButton" 
+                  (click)="onCancel()">
+          {{buttonCancelText}}
+        </button>
+  
+        <button *ngIf="showTertiary" 
+                  type="button" 
+                  class="btn secondaryButton button-bottom-padding" 
+                  [disabled]="!enableTertiary"
+                  (click)="onTertiary()">
+          {{tertiaryText}}
+        </button>
+  
+        <button *ngIf="showSecondary" 
+                  type="button" 
+                  class="btn secondaryButton button-bottom-padding" 
+                  [disabled]="!enableSecondary"
+                  (click)="onSecondary()">
+          {{secondaryText}}
+        </button>
+  
+        <button type="submit" 
+                  class="btn primaryButton button-bottom-padding" 
+                  [disabled]="(!form && !enablePrimary) || (form && !(form.valid && form.dirty))"
+                  (click)="onPrimary()">
+          {{primaryText}}
+        </button>
+      </span>
+    <!-- </div> -->
+  <!-- </div> -->

@@ -1,0 +1,17 @@
+<div class="row">
+  <search-input class="col-lg-6 form-group" 
+                [placeholder]="placeholder" 
+                (searchInputChanged)="onSearchChanged($event)">
+  </search-input>
+  <date-range-picker class="col-lg-3 form-group" 
+                    [(ngModel)]="dateRange" 
+                    (change)="onDateChaged()">
+  </date-range-picker>
+  <busy-select class="col-lg-3 form-group" 
+               [displayName]="displayName"
+               [selectText]="selectText"
+               [selectOptions]="options"
+               [valueName]="valueName"
+               (optionSelected)="onOptionSelected($event)">
+   </busy-select>
+</div>

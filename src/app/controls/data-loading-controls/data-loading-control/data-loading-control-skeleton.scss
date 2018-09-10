@@ -1,0 +1,53 @@
+/* 
+Animated skeleton screen using CSS.
+Src: https://codepen.io/oslego/pen/XdvWmd
+*/
+$colorStep0: rgba(222, 222, 222, 0.1);
+$colorStep1: rgba(222, 222, 222, 0.3);
+$colorStep2: rgba(222, 222, 222, 0.5);
+$colorStep3: rgba(222, 222, 222, 0.7);
+
+	.skeletonLoader {
+	 
+		width: 100%;
+		height: 110px; /* change height to see repeat-y behavior */
+		background-image:
+			linear-gradient( $colorStep0 16px, transparent 0 ),
+			linear-gradient( $colorStep0 16px, transparent 0 ),
+			linear-gradient( $colorStep0 16px, transparent 0 ); 
+
+		background-repeat: repeat-y;
+
+		background-size:
+			95% 200px,
+			95% 200px,
+			75% 200px;
+
+		background-position:
+			10px 36px,
+			10px 60px,
+			10px 84px;
+
+		animation: pulse 3s infinite;
+	}
+
+	@keyframes pulse {
+
+  0%, 100% {background-image:
+		linear-gradient( $colorStep1 16px, transparent 0 ),
+		linear-gradient( $colorStep1 16px, transparent 0 ),
+		linear-gradient( $colorStep1 16px, transparent 0 ); 
+    }
+
+    20%, 90% {background-image:
+		linear-gradient( $colorStep2 16px, transparent 0 ),
+		linear-gradient( $colorStep2 16px, transparent 0 ),
+		linear-gradient( $colorStep2 16px, transparent 0 ); 
+    }
+   80% {
+    background-image:
+		linear-gradient( $colorStep3 16px, transparent 0 ),
+		linear-gradient( $colorStep3 16px, transparent 0 ),
+		linear-gradient( $colorStep3 16px, transparent 0 );  
+    } 
+	}

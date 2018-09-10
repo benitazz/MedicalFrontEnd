@@ -1,0 +1,15 @@
+<div class="row no-gutters">
+    <div class="col">
+        <input #searchInputField 
+               class="form-control form-control-round-left" 
+               type="search" 
+               placeholder="{{placeholder}}" 
+               [ngModel]="searchText" 
+               [disabled]="disabled">
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-outline-secondary border-left-0 form-control-round-right" type="button">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>

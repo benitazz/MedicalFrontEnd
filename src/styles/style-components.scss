@@ -1,0 +1,77 @@
+@import 'style-set.scss';
+@import 'mixins.scss';
+
+button.dropdown-toggle:active {
+  background-color: white;
+}
+
+button.dropdown-toggle:focus {
+  background-color: white;
+  border-color: $secondaryColor;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $secondaryColorOverlay;
+  outline: 0 !important;
+}
+
+button.dropdown-toggle:hover {
+  background-color: white;
+}
+
+.btn-default.active,
+.btn-default:active,
+.open>.dropdown-toggle.btn-default {
+  background-color: white;
+}
+
+/*.btn-link {
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}*/
+
+.card {
+  border: none;
+  background-color: $primaryItemColor;
+  margin-bottom: 15px;
+  padding-bottom: 1px;
+  @include box-shadow(2px, 2px, 2px, $shadowColor);
+}
+
+.content-panel-no-shadow {
+  border: none;
+  background-color: $primaryItemColor;
+  margin-bottom: 10px;
+  padding-bottom: 1px;
+}
+
+.dropdown-toggle::after {
+  border: none !important;
+}
+
+.list-group-item {
+  border-left: none !important;
+  border-right: none !important;
+  padding-bottom: 0.4rem !important;
+  padding-left: 1rem !important;
+  padding-top: 0.4rem !important;
+}
+
+.list-group-item:first-child {
+  border-top: none !important;
+}
+
+.hand-pointer {
+  cursor: pointer;
+}
+
+.open>.dropdown-toggle.btn-default.focus,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover {
+  background-color: white;
+}
+
+nav {
+  @include border-style('bottom');
+  margin-bottom: 10px;
+}
+
+
+

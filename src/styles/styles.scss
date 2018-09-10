@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+/*bg-primary {
+    border-color: #127ba3;
+}
+
+
+bg-primary {
+    background-color: #158CBA !important;
+}
+
+
+.navbar {
+    border-style: solid;
+    border-width: 0 1px 4px 1px;
+    border-color: #158CBA;
+}*/
+
+@import "../../node_modules/bootswatch/dist/spacelab/variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootswatch/dist/spacelab/bootswatch";
+@import "../../node_modules/bootswatch/dist/spacelab/bootstrap.min.css";
+
+.dropdown-menu {
+    width: 300px !important;
+}
+
+body{
+    background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
+    //padding:50px;
+}
+
+.background-theme {
+    background: white;
+    //background: #9CECFB;
+    /* fallback for old browsers */
+   // background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    /* Chrome 10-25, Safari 5.1-6 */
+    //background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    border: 1px solid #345578;
+}
+
+.form-gap {
+    padding-top: 50px;
+}

@@ -1,0 +1,66 @@
+/*Style-set.scss - USE FOR SASS VARIALBLES AND DECLARATIONS*/
+
+$inputHeight: 35px;
+$buttonMinWidth: 100px;
+$red: #CA1F22;
+$white: #ffffff;
+$yellow: #FFCC00;
+$blue:#1380C3;
+
+$primaryTextColor: #54626C;
+$secondaryTextColor: #A9A8A9;
+$tertiaryTextColor: #FFFFFF;
+$alternativeTextColor: #000000;
+$primaryIconColor: #54626C;
+$secondaryIconColor: #A9A8A9;
+
+$primaryColor: #000000;
+$secondaryColor: #FFCC00;  // #FFC709;
+$tertiaryColor: #EBEBEB;
+$alternateColor: #14966E;
+$secondaryColorOverlay:rgba(255, 199, 9, 0.6);
+
+$primaryPanelColor: #f7f7f7;
+$secondaryPanelColor: #f2f2f2;
+$primaryItemColor: #ffffff;
+
+$controlPrimaryColor: #ffffff;
+$controlBorderColor: #EBEBEB;
+$controlSecondaryColor: #EBEBEB;
+$controlInactive: #A9A8A9; //169.169.169.1
+$controlInvalid: #CC2229;
+$shadowColor: #C3C8CA;
+$overlayColor: rgba(255, 255, 255, 0.6);
+$disabledColor: #f2f2f2;
+
+
+$primaryTextSize: 15px;
+$smallTextSize: 13px;
+$largeTextSize: 20px;
+$alternateTextSize: 18px;
+$mediumHeaderTextSize: 20px;
+$largeHeaderTextSize: 22px;
+$navigationTextSize:15px;
+
+$primaryIconSizeJoin: 2em;
+$primaryIconSize: 2.3em;
+
+$smallLineHeight: 1.5em;
+$smallHeight: 3em;
+
+$primaryTextFont: 'clan-book-webfont';
+$secondaryTextFont: 'clan-book-webfont';
+$tersiaryTextFont: 'clan-news-webfont';
+$iconFont: 'icomoon';
+
+//CONTROLS
+$controlHeight: 38px;
+$controlPadding: 9px;
+$controlMargin: 0px;
+$controlBorderWidth: 1px;
+$controlBorderStyle: solid;
+
+// DEFAULT HTML BORDER
+$defaultControlBorder: #ccc;
+
+$primaryBackgroundColor: #d9d8d6 // #e5e5e5;

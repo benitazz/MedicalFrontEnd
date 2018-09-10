@@ -1,0 +1,21 @@
+export const Odata = Object.freeze({
+    ALL: 'all',
+    AND: 'and',
+    ANY: 'any',
+    CONTAINS: 'contains',
+    DESC: 'desc',
+    EXPAND: 'expand',
+    EQUAL: 'eq',
+    FILTER: 'filter',
+    FIRST_QUERY_PARAMATER: '?$',
+    GREATER_THAN: 'ge',
+    GROUP: 'group',
+    LESS_THAN: 'le',
+    NEXT_QUERY_PARAMATER: '&$',
+    NOT_EQUAL: 'ne',
+    OR: 'or',
+    ORDER_BY: 'orderby',
+    SELECT: 'select',
+    SKIP: 'skip',
+    TOP: 'top'
+});

@@ -1,0 +1,13 @@
+<div class="row">
+  <search-input class="col-lg-8 form-group" 
+                [placeholder]="placeholder" 
+                (searchInputChanged)="onSearchChanged($event)">
+  </search-input>
+  <busy-select class="col-lg-4 form-group" 
+                [displayName]="displayName"
+                [selectText]="selectText"
+                [selectOptions]="options"
+                [valueName]="valueName"
+               (optionSelected)="onOptionSelected($event)">
+  </busy-select>
+</div>

@@ -1,0 +1,10 @@
+.card-header {
+    background-color: #fff;
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+:host /deep/ .media-body {
+    margin-bottom: -20px;
+}

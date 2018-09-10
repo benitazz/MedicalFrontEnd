@@ -1,0 +1,11 @@
+@import '../../../../styles/style-set.scss';
+
+.noResultContainer{
+  font-size: 1.17em;
+  color: $primaryTextColor;
+  vertical-align: middle;
+  text-align: center;
+  /*padding-top: 15px;
+  padding-bottom: 15px;*/
+  font-weight: bold;
+}

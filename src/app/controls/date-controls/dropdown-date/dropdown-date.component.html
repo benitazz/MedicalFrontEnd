@@ -1,0 +1,29 @@
+<div class="input-group">
+  <busy-select [selectText]="selectedDateText" 
+               [displayName]="'name'"
+               [selectOptions]="options"
+               [valueName]="'id'" 
+               [disabled]="disabled"
+               (optionSelected)="onDaysSelectionChanged($event)">
+  </busy-select>
+
+  <input ngx-mydatepicker 
+         name="myDate" 
+         id="dateId" 
+         [hidden]="true" 
+         [(ngModel)]="dateValue" 
+         [options]="calendarOptions" 
+         (ngModelChange)="onDateCalenderChange()"
+         #dp="ngx-mydatepicker"
+         type="text" />
+
+  <span class="input-group-btn">
+    <button [disabled]="disabled" 
+            class="btn btn-default calender" 
+            type="button" 
+            (click)="dp.toggleCalendar()">
+      <i class="fa fa-calendar"></i>
+    </button>
+
+  </span>
+</div> 

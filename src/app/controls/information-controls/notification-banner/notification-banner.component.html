@@ -1,0 +1,24 @@
+<div [hidden]="!bannerMessage">
+  <div [ngClass]="alertClass" class="alert alert-dismissable">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <div class="align-center">
+      <div class="alert-icon-col ">
+        <div [ngSwitch]="bannerTypeValue">
+          <div *ngSwitchCase="bannerType.Success">
+            <i class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
+          </div>
+          <div *ngSwitchCase="bannerType.Error">
+            <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
+          </div>
+          <div *ngSwitchCase="bannerType.Warning">
+            <i class="fa fa-exclamation fa-2x" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <div class="pl-2">
+        {{alertMessage}}
+      </div>
+    </div>
+
+  </div>
+</div>

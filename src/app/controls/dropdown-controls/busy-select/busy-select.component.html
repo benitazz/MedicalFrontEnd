@@ -1,0 +1,32 @@
+<div class="busyDropdown" ngbDropdown>
+  <button ngbDropdownToggle type="button" class="dropdown-toggle form-control" [ngClass]="{'disabled disabled-cursor': disabled}"
+    *ngIf="isOptionsPopulated; else selectLoader">
+    <span class="float-left" [ngClass]="{'disabled disabled-cursor': disabled}">{{selectText}}</span>
+    <span class="caret float-right hand-pointer" [ngClass]="{'disabled disabled-cursor': disabled}"></span>
+  </button>
+  <ul ngbDropdownMenu class="dropdown-menu m-0" role="menu">
+    <li role="menuitem" *ngFor="let option of selectOptions">
+      <a class="dropdown-item" (click)="optionChanged(option)">{{option[displayName]}}</a>
+    </li>
+  </ul>
+</div>
+
+<ng-template #selectLoader>
+  <button ngbDropdownToggle type="button" [ngClass]="{'disabled disabled-cursor': disabled}" class="dropdown-toggle form-control"
+  *ngIf="!noItems; else noItemsDisplay">
+    <span class="float-left" [ngClass]="{'disabled disabled-cursor': disabled}">{{loadingText}}</span>
+    <data-loading-control class="float-right soundWave"
+                          [showLoading]="true"
+                          [ngClass]="{'disabled disabled-cursor': disabled}"
+                          [loaderType]="loaderType">
+    </data-loading-control>
+ </button>
+</ng-template>
+
+<ng-template #noItemsDisplay>
+  <button ngbDropdownToggle type="button" [ngClass]="{'disabled disabled-cursor': disabled}" class="dropdown-toggle form-control">
+    <span class="float-left" [ngClass]="{'disabled disabled-cursor': disabled}">{{noItemsText}}</span>
+  </button>
+</ng-template> 
+
+

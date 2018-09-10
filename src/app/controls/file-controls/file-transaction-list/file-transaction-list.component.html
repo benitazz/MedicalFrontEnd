@@ -1,0 +1,23 @@
+<standard-search-bar [displayName]="'name'" [options]="transactionStatuses" [placeholder]="placeholder" [selectText]="selectText"
+  [valueName]="'id'">
+</standard-search-bar>
+
+<custom-panel [removePadding]="true" *ngIf="canView">
+  <div class="heading row mr-0">
+    <span class="col-sm-6">Transactions</span>
+    <div class="col-sm-6">
+      <currency-format class="float-right" [amount]="totalAmount"></currency-format>
+    </div>
+  </div>
+  <div class="body">
+    <ul class="list-group">
+      <li *ngFor="let fileTransaction of fileTransactions" class="list-group-item list-item-bottom-border">
+        <file-transaction [fileTransaction]="fileTransaction" [transactionStatus]="getTransactionStatus(fileTransaction)"></file-transaction>
+      </li>
+    </ul>
+  </div>
+</custom-panel>
+
+<no-result [isBusy]="!isLoading"></no-result>
+<data-loading-control [showLoading]="isLoadingMore" [loaderType]="loaderType.Spinner"></data-loading-control>
+<data-loading-control [showLoading]="isLoading" [levels]="3" [loaderType]="loaderType.Skeleton"></data-loading-control>
