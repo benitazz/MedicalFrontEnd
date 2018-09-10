@@ -21,13 +21,16 @@ import {
   UserService
 } from './services';
 
+import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogComponent,
     IsBusyComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
