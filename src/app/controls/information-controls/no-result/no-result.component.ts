@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'no-result',
+  selector: 'app-no-result',
   templateUrl: './no-result.component.html',
   styleUrls: ['./no-result.component.scss']
 })

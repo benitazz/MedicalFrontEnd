@@ -44,10 +44,12 @@ export class DataService extends UrlBuilderService {
   public post(
     dataObject: any
     , url?: string
+    , appendToken: boolean = true
     , contentType: ContentType = ContentType.Json): Observable<any> {
+
     const that = this;
     const postData = JSON.stringify(dataObject);
-    const headers = that.getPostHeader(contentType);
+    const headers = that.getPostHeader(appendToken, contentType);
     url = that.getUrl(url);
     return that.getObservableJsonResponse(that._http.post(url, postData, { headers }));
   }
@@ -84,19 +86,19 @@ export class DataService extends UrlBuilderService {
 
     const token = localStorage.getItem(Constants.TOKEN);
 
-    if (token) {
+    /*if (token) {
       const tokenObject: AuthToken = JSON.parse(token);
-      headers.append('Authorization', `bearer ${tokenObject.auth_token}`);
+      headers.append('Authorization', `bearer ${tokenObject}`);
     }
 
     if (contentType === ContentType.Blob) {
       headers.append('ResponseType', 'arraybuffer');
-    }
+    }*/
 
     return headers;
   }
 
-  private getPostHeader(contentType: ContentType = ContentType.Json): Headers {
+  private getPostHeader(appendToken: boolean, contentType: ContentType = ContentType.Json): Headers {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
@@ -113,12 +115,18 @@ export class DataService extends UrlBuilderService {
         throw new Error('Unsupported content type.');
     }
 
-    const token = localStorage.getItem(Constants.TOKEN);
+    if (!appendToken) {
+      return headers;
+    }
+
+   /* const token = localStorage.getItem(Constants.TOKEN);
+    // tslint:disable-next-line:no-debugger
+    debugger;
 
     if (token && token !== 'undefined') {
       const tokenObject: AuthToken = JSON.parse(token);
-      headers.append('Authorization', `bearer ${tokenObject.auth_token}`);
-    }
+      headers.append('Authorization', `bearer ${tokenObject}`);
+    }*/
 
     return headers;
   }

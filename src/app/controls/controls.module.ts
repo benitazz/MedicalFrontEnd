@@ -40,6 +40,7 @@ import { StandardSearchBarComponent } from './search-controls/standard-search-ba
 import { TextAreaInputComponent } from './inputs-controls/text-area-input/text-area-input.component';
 
 import { VerticalSeparatorComponent } from './separator-controls/vertical-separator/vertical-separator.component';
+import { UserPanelComponent } from './panel-controls/user-panel/user-panel.component';
 
 @NgModule({
   imports: [
@@ -75,7 +76,8 @@ import { VerticalSeparatorComponent } from './separator-controls/vertical-separa
     SearchInputComponent,
     StandardSearchBarComponent,
     TextAreaInputComponent,
-    VerticalSeparatorComponent
+    VerticalSeparatorComponent,
+    UserPanelComponent
   ],
   exports: [
     AdminItemComponent,
@@ -100,7 +102,8 @@ import { VerticalSeparatorComponent } from './separator-controls/vertical-separa
     SearchInputComponent,
     StandardSearchBarComponent,
     TextAreaInputComponent,
-    VerticalSeparatorComponent
+    VerticalSeparatorComponent,
+    UserPanelComponent
   ]
 })
 export class ControlsModule { }

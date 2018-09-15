@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { ModalModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './/app-routing.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { ApproveModule } from './components/file-management/approve/approve.module';
 import { UploadModule } from './components/file-management/upload/upload.module';
+import { ControlsModule } from './controls/controls.module';
 import { NavigationPagesModule } from './components/navigation-pages/navigation-pages.module';
 
 import { DirectivesModule } from './directives/directives.module';
@@ -21,8 +23,7 @@ import {
   UserService
 } from './services';
 
-import { FooterComponent } from './components/footer/footer.component';
-
+import { DialogService, IsBusyService } from './common';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FooterComponent } from './components/footer/footer.component';
     UsersModule,
     AppRoutingModule,
     ApproveModule,
+    ControlsModule,
     UploadModule,
     NavigationPagesModule,
     DirectivesModule,
@@ -48,6 +50,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AuthService,
     BannerService,
     CanAccessService,
+    DialogService,
+    IsBusyService,
     UserService,
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],

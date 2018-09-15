@@ -35,6 +35,7 @@
     "mydaterangepicker": "^4.2.1",
     "ngx-bootstrap": "^3.0.1",
     "ngx-mydatepicker": "^2.4.9",
+    "ngx-show-hide-password": "^1.2.5",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.3.1",

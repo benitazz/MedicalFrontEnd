@@ -8,7 +8,7 @@ import { ConstantMessage } from '../../../common';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'notification-banner',
+  selector: 'app-notification-banner',
   templateUrl: './notification-banner.component.html',
   styleUrls: ['./notification-banner.component.scss']
 })
@@ -35,11 +35,11 @@ export class NotificationBannerComponent implements OnInit, OnDestroy {
   public activate(details: BannerMessage): void {
     this.bannerMessage = details;
     this.getMessage();
-    setTimeout(() => this.bannerMessage = null, this.bannerMessage && this.bannerMessage.timeout || 5000);
+   // setTimeout(() => this.bannerMessage = null, this.bannerMessage && this.bannerMessage.timeout || 5000);
   }
 
   private getMessage(): void {
-    switch (this.bannerMessage.type) {
+     switch (this.bannerMessage.type) {
       case BannerType.Success:
         this.alertClass = 'alert-success';
         this.alertMessage = this.bannerMessage.message || ConstantMessage.SUCCESS_MESSAGE;

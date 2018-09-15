@@ -31,5 +31,7 @@ export * from './routes_models/file_details_route';
 export * from './users/user-login';
 export * from './users/user';
 export * from './auth/auth-token';
+export * from './users/reset-password';
+export * from './users/forgot-password';
 
 

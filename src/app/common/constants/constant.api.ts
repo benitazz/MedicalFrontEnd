@@ -22,8 +22,11 @@ export const Api = Object.freeze({
     FILE_TRANSACTIONS: '/file/Transactions',
 
     USER_LOGIN: '/Auth/Login',
-    USER_REGISTRATION: '/users/UserRegistration',
+    USER_REGISTRATION: '/Accounts/Register',
     USER_ROLE: '/users/role',
+    USER_REST_PASSWORD: '/Accounts/ResetPassword',
+    USER_FORGOT_PASSWORD: '/Accounts/ForgotPassword',
+    USER_INFO:  '/Accounts/UserInfo',
 
     // FUNTIONS
     FUNCTIONS_TRANSACTION_SUMMARY: '/Functions.GetTotalTransactionAmount',

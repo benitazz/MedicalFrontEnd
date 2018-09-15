@@ -20,6 +20,25 @@ bg-primary {
 @import "../../node_modules/bootswatch/dist/spacelab/bootswatch";
 @import "../../node_modules/bootswatch/dist/spacelab/bootstrap.min.css";
 
+@import 'style-set.scss';
+@import 'mixins.scss';
+
+.alert-danger {
+  color: #E30613;
+  background-color: #FCE6E7;
+  border-color: #F49BA1;
+}
+
+.alert-danger-inline {
+  color: #E30613;
+  padding-left: 0px !important;
+}
+
+.alert {
+  padding: 10px;
+  margin: 0 0 5px 0;
+}
+
 .dropdown-menu {
     width: 300px !important;
 }
@@ -53,3 +72,31 @@ button[disabled=disabled], button:disabled{
 .user-screen {
     width: 430px;
 }
+
+/*.pass_show { 
+    position: relative;
+} 
+
+.pass_show .ptxt { 
+
+position: absolute; 
+
+top: 50%; 
+
+right: 10px; 
+
+z-index: 1; 
+
+color: #f36c01; 
+
+margin-top: -10px; 
+
+cursor: pointer; 
+
+transition: .3s ease all; 
+
+} 
+
+.pass_show .ptxt:hover{
+    color: #333333;
+} */
