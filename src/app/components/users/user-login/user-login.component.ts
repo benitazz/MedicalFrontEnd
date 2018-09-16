@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {Router, RouterStateSnapshot} from '@angular/router';
+
 import { AuthService, BannerService } from '../../../services';
 import { ModelFormBase, IBuildForm, ConstantMessage, NotFoundError, BadInput } from '../../../common';
 import { IsBusyService } from './../../../common';
@@ -18,7 +20,8 @@ export class UserLoginComponent extends ModelFormBase implements OnInit, IBuildF
   constructor(
     private _authService: AuthService,
     private _bannerService: BannerService,
-    private _isBusy: IsBusyService) {
+    private _isBusy: IsBusyService,
+    private _router: Router) {
     super();
   }
 
@@ -29,9 +32,8 @@ export class UserLoginComponent extends ModelFormBase implements OnInit, IBuildF
   public signIn($credentials: UserLogin): void {
     this._isBusy.show();
     this._authService.login($credentials).subscribe(data => {
-        // tslint:disable-next-line:no-debugger
-        debugger;
-      this._isBusy.hide();
+          this._isBusy.hide();
+          this._router.navigate([`/upload`]);
     }, (error) => {
       // tslint:disable-next-line:no-debugger
       debugger;

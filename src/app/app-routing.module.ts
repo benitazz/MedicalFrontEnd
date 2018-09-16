@@ -79,6 +79,10 @@ const routes: Routes = [
     loadChildren: './components/users/users.module#UsersModule'
   },
   {
+    path: 'uploads',
+    loadChildren: './components/file-management/upload/upload.module#UploadModule'
+  },
+  {
     path: 'home',
     component: HomeComponent
   },

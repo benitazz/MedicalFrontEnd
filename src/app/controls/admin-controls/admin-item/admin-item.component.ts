@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { User, Role } from '../../../models';
 
 @Component({
-  selector: 'admin-item',
+  selector: 'app-admin-item',
   templateUrl: './admin-item.component.html',
   styleUrls: ['./admin-item.component.scss']
 })
@@ -22,7 +22,8 @@ export class AdminItemComponent implements OnInit {
   }
 
   public isRoleChecked($role: Role): boolean {
-    return this.user.roleId === $role.roleId;
+    return false;
+    // return this.user.roleId === $role.roleId;
   }
 
   public canEditRole($role: Role): boolean {
@@ -39,7 +40,7 @@ export class AdminItemComponent implements OnInit {
 
   public updateSelection($selectedRole: Role): void {
     this.deselectAll();
-    this.user.roleId = $selectedRole.roleId;
+   // this.user.roleId = $selectedRole.roleId;
   }
 
   private deselectAll(): void {

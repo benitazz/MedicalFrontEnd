@@ -3,10 +3,10 @@ import { Constants } from '../../common/constants/constant';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserLogin, ResetPassword, ForgotPassword } from '../../models';
+import { UserLogin, ResetPassword, ForgotPassword, User } from '../../models';
 import { Api, ConstantRoutes } from '../../common';
 // import { CurrentUser } from '../../common/helpers/token-decoder.helper';
-import { isTokenExpired } from './../../common/helpers/token-decoder.helper';
+import { isTokenExpired, CurrentUser } from './../../common/helpers/token-decoder.helper';
 import { DataService } from '../remote-data/data.service';
 import { map, flatMap, switchMap } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -22,12 +22,6 @@ export class AuthService extends DataService {
     return !isTokenExpired();
     /*const token = localStorage.getItem(Constants.TOKEN);
     return !this.jwtHelper.isTokenExpired(token);*/
-  }
-
-  private _userData: any;
-
-  get currentUser(): any {
-    return this._userData;
   }
 
   constructor(
@@ -50,8 +44,10 @@ export class AuthService extends DataService {
           return decoded.id;
         }),
         switchMap(id => this.get(this.buildUrl(`${Api.USER_INFO}?userId=${id}`))),
-        map(userdata => {
-          this._userData = userdata;
+        map((userdata: User) => {
+          // tslint:disable-next-line:no-debugger
+          debugger;
+          localStorage.setItem(Constants.CURRENT_USER, JSON.stringify(userdata));
           return userdata;
         })
       );
@@ -69,7 +65,7 @@ export class AuthService extends DataService {
 
   public logout(): void {
     localStorage.removeItem(Constants.TOKEN);
-    delete this._userData;
+    localStorage.removeItem(Constants.CURRENT_USER);
     this._router.navigate([`/${ConstantRoutes.LOGIN}`]);
   }
 }

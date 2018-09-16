@@ -1,13 +1,11 @@
+import { Role } from './role';
+
 export interface User {
+    id: string;
     firstName: string;
-    surname: string;
-    email: string;
-    password: string;
-    confirmPassword: string;
-    passwordQuestion: string;
-    passwordAnswer: string;
-    businessUnitId: string;
-    applicationId: string;
-    roleName: string;
-    roleId: string;
+    lastName: string;
+    username: string;
+    practiceNo: string;
+    isEmailConfirmed: boolean;
+    roles: Array<Role>;
 }

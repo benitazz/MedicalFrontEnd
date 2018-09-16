@@ -22,7 +22,7 @@ export class CanAccessService {
 
   private doCheckAuthorization(path: string[]): boolean {
     this.currentUser = CurrentUser();
-    this.userRoles = new Set([this.currentUser.roleName]);
+    this.userRoles = new Set([this.currentUser.firstName]);
     if (path.length) {
       const entry = this.findEntry(UserRoles, path);
       if (entry && entry['permittedRoles']
@@ -40,7 +40,7 @@ export class CanAccessService {
  */
   private findEntry(currentObject: any, keys: string[], index = 0): any {
     const key = keys[index];
-    if (currentObject[key] && key === this.currentUser.roleName) {
+    if (currentObject[key] && key === this.currentUser.firstName) {
       return currentObject[key];
     }
 

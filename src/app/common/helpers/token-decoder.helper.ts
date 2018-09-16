@@ -45,8 +45,19 @@ export const isTokenExpired = (token?: string) => {
 
 export const CurrentUser = (token?: string) => {
     try {
+        if (!isTokenExpired) {
+            return null;
+        }
 
-        // tslint:disable-next-line:no-debugger
+        const currentUser = localStorage.getItem(Constants.CURRENT_USER);
+
+        if (!currentUser) {
+            return null;
+        }
+
+        return JSON.parse(currentUser);
+
+        /*// tslint:disable-next-line:no-debugger
         debugger;
         if (!token) {
             token = localStorage.getItem(Constants.TOKEN);
@@ -59,13 +70,13 @@ export const CurrentUser = (token?: string) => {
        // const tokenObject: AuthToken = JSON.parse(token);
 
         const decodedToken = jwt_decode(token);
-        const currentUser = {} as User;
-        currentUser.email = decodedToken.username;
-        currentUser.firstName = decodedToken.firstName;
-        currentUser.surname = decodedToken.surname;
-        currentUser.roleName = decodedToken.role ? decodedToken.role.toLowerCase() : '';
-        currentUser.roleId = decodedToken.roleId;
-        return currentUser;
+        const currentUser = {} as User;*/
+        /* currentUser.email = decodedToken.username;
+         currentUser.firstName = decodedToken.firstName;
+         currentUser.surname = decodedToken.surname;
+         currentUser.roleName = decodedToken.role ? decodedToken.role.toLowerCase() : '';
+         currentUser.roleId = decodedToken.roleId;
+         return currentUser;*/
 
     } catch (Error) {
         return null;

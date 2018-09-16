@@ -13,6 +13,8 @@ export const Constants = Object.freeze({
     CSV_EXTENSION: 'csv',
     TOKEN: 'token',
     EMPTY_GUID: '00000000-0000-0000-0000-000000000000',
+    CURRENT_USER: 'currentUser',
+
 
     HTTP_NOT_FOUND: 404,
     HTTP_BAD_REQUEST: 400,
