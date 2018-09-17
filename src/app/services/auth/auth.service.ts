@@ -45,8 +45,6 @@ export class AuthService extends DataService {
         }),
         switchMap(id => this.get(this.buildUrl(`${Api.USER_INFO}?userId=${id}`))),
         map((userdata: User) => {
-          // tslint:disable-next-line:no-debugger
-          debugger;
           localStorage.setItem(Constants.CURRENT_USER, JSON.stringify(userdata));
           return userdata;
         })

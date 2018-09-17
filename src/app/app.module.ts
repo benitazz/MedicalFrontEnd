@@ -11,7 +11,6 @@ import { AppRoutingModule } from './/app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { ApproveModule } from './components/file-management/approve/approve.module';
-import { UploadModule } from './components/file-management/upload/upload.module';
 import { ControlsModule } from './controls/controls.module';
 import { NavigationPagesModule } from './components/navigation-pages/navigation-pages.module';
 
@@ -40,7 +39,6 @@ import { DialogService, IsBusyService } from './common';
     AppRoutingModule,
     ApproveModule,
     ControlsModule,
-    UploadModule,
     NavigationPagesModule,
     DirectivesModule,
     HttpModule

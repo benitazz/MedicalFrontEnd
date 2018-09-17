@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UploadListComponent } from './upload-list/upload-list.component';
 
 const uploadRoutes: Routes = [
-    { path: 'upload', component: UploadListComponent }
+    { path: '', component: UploadListComponent }
 ];
 
 @NgModule({

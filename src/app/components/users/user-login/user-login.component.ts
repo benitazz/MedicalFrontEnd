@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import {Router, RouterStateSnapshot} from '@angular/router';
+import { Router, RouterStateSnapshot } from '@angular/router';
 
 import { AuthService, BannerService } from '../../../services';
 import { ModelFormBase, IBuildForm, ConstantMessage, NotFoundError, BadInput } from '../../../common';
@@ -32,11 +32,9 @@ export class UserLoginComponent extends ModelFormBase implements OnInit, IBuildF
   public signIn($credentials: UserLogin): void {
     this._isBusy.show();
     this._authService.login($credentials).subscribe(data => {
-          this._isBusy.hide();
-          this._router.navigate([`/upload`]);
+      this._isBusy.hide();
+      this._router.navigate([`/uploads`]);
     }, (error) => {
-      // tslint:disable-next-line:no-debugger
-      debugger;
       this._isBusy.hide();
       if (error instanceof NotFoundError) {
         this._bannerService.showError('The account does not exist, please create a new account.');
