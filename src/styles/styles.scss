@@ -100,3 +100,44 @@ transition: .3s ease all;
 .pass_show .ptxt:hover{
     color: #333333;
 } */
+
+.card {
+    border: none;
+    background-color: $primaryItemColor;
+    margin-bottom: 15px;
+    padding-bottom: 1px;
+    @include box-shadow(2px, 2px, 2px, $shadowColor);
+  }
+  
+  .content-panel-no-shadow {
+    border: none;
+    background-color: $primaryItemColor;
+    margin-bottom: 10px;
+    padding-bottom: 1px;
+  }
+  
+  .dropdown-toggle::after {
+    border: none !important;
+  }
+  
+  .list-group-item {
+    border-left: none !important;
+    border-right: none !important;
+    padding-bottom: 0.4rem !important;
+    padding-left: 1rem !important;
+    padding-top: 0.4rem !important;
+  }
+  
+  .list-group-item:first-child {
+    border-top: none !important;
+  }
+  
+  .hand-pointer {
+    cursor: pointer;
+  }
+  
+  .open>.dropdown-toggle.btn-default.focus,
+  .open>.dropdown-toggle.btn-default:focus,
+  .open>.dropdown-toggle.btn-default:hover {
+    background-color: white;
+  }

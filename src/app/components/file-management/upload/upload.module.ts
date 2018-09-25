@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ControlsModule } from '../../../controls/controls.module';
 import { UploadRoutingModule } from './upload-routing.module';
 
 import { UploadListComponent } from './upload-list/upload-list.component';
@@ -10,6 +11,7 @@ import { UploadItemComponent } from './upload-item/upload-item.component';
 @NgModule({
   imports: [
     CommonModule,
+    ControlsModule,
     FormsModule,
     UploadRoutingModule
   ],
