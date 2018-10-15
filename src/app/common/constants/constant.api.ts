@@ -21,12 +21,12 @@ export const Api = Object.freeze({
     FILE_UPLOAD: '/file/FileUploads',
     FILE_TRANSACTIONS: '/file/Transactions',
 
-    USER_LOGIN: '/Auth/Login',
-    USER_REGISTRATION: '/Accounts/Register',
+    USER_LOGIN: '/users/Auth/Login',
+    USER_REGISTRATION: '/users/Accounts/Register',
     USER_ROLE: '/users/role',
-    USER_REST_PASSWORD: '/Accounts/ResetPassword',
-    USER_FORGOT_PASSWORD: '/Accounts/ForgotPassword',
-    USER_INFO:  '/Accounts/UserInfo',
+    USER_REST_PASSWORD: '/users/Accounts/ResetPassword',
+    USER_FORGOT_PASSWORD: '/users/Accounts/ForgotPassword',
+    USER_INFO:  '/users/Accounts/UserInfo',
 
     // FUNTIONS
     FUNCTIONS_TRANSACTION_SUMMARY: '/Functions.GetTotalTransactionAmount',

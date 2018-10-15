@@ -11,10 +11,10 @@
         <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" routerLink="aboutUs">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" routerLink="contactUs">Contact</a>
       </li>
     </ul>
 
@@ -30,8 +30,11 @@
          Hi {{user?.firstName}}
         </a>
         <div class="dropdown-menu dropdown-menu-right p-3 ">
-          <a class="dropdown-item">Link 1</a>
-          <a class="dropdown-item">Link 2</a>
+          <a class="dropdown-item">Upload Invoices</a>
+          <a class="dropdown-item">Manage Account</a>
+          <a class="dropdown-item">Advanced Search</a>
+          <a class="dropdown-item">Manage Invoices</a>
+          <a class="dropdown-item">Admin</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="authService.logout()">Logout</a>
         </div> 
