@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FileTransaction, Lookup } from '../../../models';
 import { FileTransactionType } from '../../../enums';
+import '../../../common/extensions/string.extensions';
 
 @Component({
   selector: 'file-transaction',
@@ -19,7 +20,7 @@ export class FileTransactionComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
-    this.statusClass = this.transactionStatus ? this.transactionStatus.name.toLowerCase() : '';
+    this.statusClass = this.transactionStatus ? this.transactionStatus.name.toLowerCase() : String.Empty;
 
     if (this.fileTransaction && this.fileTransaction.fileTransactionTypeId) {
       this.fileTransactionType = FileTransactionType[this.fileTransaction.fileTransactionTypeId].toLowerCase();

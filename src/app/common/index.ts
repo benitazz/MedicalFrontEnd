@@ -27,7 +27,6 @@ export * from './errors/forbidden-error';
 export * from './errors/conflict-error';
 
 // EXTENSIONS
-export * from './extensions/string.extensions';
 
 // IS BUSY
 export * from './is-busy/is-busy.component';

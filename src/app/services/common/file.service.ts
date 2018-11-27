@@ -5,6 +5,7 @@ import { DataService } from '../remote-data/data.service';
 import { Observable } from 'rxjs';
 import { FileDetail, FileContent, FileFilter, Lookup, CustomDate } from '../../models';
 import { Api } from '../../common';
+import '../../common/extensions/string.extensions';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,7 @@ export class FileService extends DataService {
     }
 
     public getFiles(fileFilter?: FileFilter): Observable<Array<FileDetail>> {
-        let url = '';
+        let url = String.Empty;
         if (!fileFilter ||
             ((!fileFilter.statusFilter || fileFilter.statusFilter.id === -1)
                 && !fileFilter.searchFilter
@@ -24,7 +25,7 @@ export class FileService extends DataService {
             return super.getAll(url);
         }
 
-        let query = '';
+        let query = String.Empty;
 
         for (const property in fileFilter) {
             if (fileFilter.hasOwnProperty(property)) {

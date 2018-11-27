@@ -20,13 +20,20 @@
 
     <ul *ngIf="!authService.isLoggedIn" class="navbar-nav mr-right">
       <li class="nav-item dropdown">
-        <a class="nav-link" id="navbarDropdownMenuLink" routerLink="/login">Login</a> 
+        <a class="nav-link" 
+           id="navbarDropdownMenuLink" 
+           routerLink="/login">
+           Login
+        </a> 
     </ul>
 
     <ul *ngIf="authService.isLoggedIn" class="navbar-nav mr-right">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" a ria-haspopup="true"
-          aria-expanded="false">
+        <a class="nav-link dropdown-toggle" 
+           id="navbarDropdownMenuLink" 
+           data-toggle="dropdown" 
+           a ria-haspopup="true"
+           aria-expanded="false">
          Hi {{user?.firstName}}
         </a>
         <div class="dropdown-menu dropdown-menu-right p-3 ">

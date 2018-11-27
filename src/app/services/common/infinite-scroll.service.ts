@@ -6,6 +6,7 @@ import { catchError, map } from 'rxjs/operators';
 
 import { DataService } from '../remote-data/data.service';
 import { environment } from '../../../environments/environment';
+import '../../common/extensions/string.extensions';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class InfiniteScrollService extends DataService implements OnDestroy {
   private _moreData = this.moreDataSubject.asObservable();
 
   constructor(http: Http) {
-    super(http, '');
+    super(http, String.Empty);
   }
 
   public get LAZY_LOAD_CAPACITY(): number {

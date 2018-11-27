@@ -2,6 +2,7 @@ import { Response } from '@angular/http';
 import { FileDetail } from '../../models';
 import { Constants } from '..';
 import { saveAs as importedSaveAs } from 'file-saver';
+import '../extensions/string.extensions';
 
 /**
  * Saves a file by opening file-save-as dialog in the browser
@@ -20,7 +21,7 @@ export const saveFile = (fileContent: string, fileName?: string) => {
  * @param res http Response
  */
 export const getFileNameFromResponseContentDisposition = (res: Response) => {
-    const contentDisposition = res.headers.get('content-disposition') || '';
+    const contentDisposition = res.headers.get('content-disposition') || String.Empty;
     const matches = /filename=([^;]+)/ig.exec(contentDisposition);
     const fileName = (matches[1] || 'untitled').trim();
     return fileName;

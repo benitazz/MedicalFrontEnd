@@ -1,13 +1,14 @@
 import { IDictionary, UrlBuilderCriteria, UrlExpandCriteria } from '../../models';
 import { Api, Constants, Odata } from '../../common';
 import { environment } from '../../../environments/environment';
+import '../../common/extensions/string.extensions';
 
 export class UrlBuilderService {
 
   constructor() { }
 
   // BUILD
-  public buildUrl(url: string = '', metaData: string = ''): string {
+  public buildUrl(url: string = String.Empty, metaData: string = String.Empty): string {
     let result = // String.contains(url, environment.webservice_api_url) ?
       url.search(environment.webservice_api_url) !== -1 ?
         url : `${environment.webservice_api_url}/${environment.webservice_api_version}${url}`;
@@ -19,7 +20,7 @@ export class UrlBuilderService {
   }
 
   public build(criteria: UrlBuilderCriteria): string {
-    let query = '';
+    let query = String.Empty;
     for (const key of Object.keys(criteria)) {
       if (key !== 'resource' && criteria[key]) {
         query = query.concat(query ? `${criteria[key]}` : `&${criteria[key]}`);

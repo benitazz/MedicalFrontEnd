@@ -14,34 +14,58 @@
 
           <form class="form" #loginForm="ngForm" (ngSubmit)="signIn(loginForm.value)">
             <div class="form-group">
-              <label class="sr-only" for="inputEmail">Email address</label>
+              <label class="sr-only" 
+                     for="inputEmail">
+                     Email address
+              </label>
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <div class="input-group-text"><i class="fa fa-user"></i></div>
+                  <div class="input-group-text">
+                    <i class="fa fa-user"></i>
+                  </div>
                 </div>
-                <input type="email" ngModel name="username" class="form-control" id="inputEmail" aria-describedby="emailHelp"
-                  placeholder="Email Address" required emailValidator autofocus>
+                <input type="email" 
+                       ngModel 
+                       name="username" 
+                       class="form-control" 
+                       id="inputEmail" 
+                       aria-describedby="emailHelp"
+                       placeholder="Email Address" 
+                       required emailValidator autofocus>
               </div>
               <inline-message [message]="formErrors.inputEmail"></inline-message>
             </div>
 
             <div class="form-group">
-              <label class="sr-only" for="inputPassword">Password</label>
+              <label class="sr-only" 
+                     for="inputPassword">
+                     Password
+              </label>
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                  <div class="input-group-text">
+                    <i class="fa fa-lock"></i>
+                  </div>
                 </div>
                 <!-- <show-hide-password size="lg" icon="entypo" btnStyle="primary" [btnOutline]="false"> -->
-                <input type="password" ngModel name="password" class="form-control" id="inputPassword" placeholder="Password"
-                  required>
+                <input type="password" 
+                       ngModel 
+                       name="password" 
+                       class="form-control" 
+                       id="inputPassword" 
+                       placeholder="Password"
+                       required>
                 <!-- </show-hide-password> -->
               </div>
               <inline-message [message]="formErrors.inputPassword"></inline-message>
-              <div class="help-block text-right"><a routerLink="/forgotpassword">Forgot the password ?</a></div>
+              <div class="help-block text-right">
+                <a routerLink="/forgotpassword">Forgot the password ?</a></div>
             </div>
 
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.valid">
+              <button type="submit" 
+                      class="btn btn-primary btn-block" 
+                      [disabled]="!loginForm.valid">
                 Sign in
               </button>
             </div>

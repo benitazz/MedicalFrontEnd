@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Lookup, FileDetail, FileFilter } from '../../../../models';
 import { ConstantMessage, Constants, ComponentBase } from '../../../../common';
 import { BannerService } from '../../../../services';
+import '../../../../common/extensions/string.extensions';
 
 @Component({
   selector: 'app-upload-list',
@@ -28,6 +29,7 @@ export class UploadListComponent extends ComponentBase implements OnInit {
 
   public fileChangeListener(files: FileList): void {
     this.resetFileName();
+    debugger
     if (files && files.length > 0) {
       const file: File = files.item(0);
 
@@ -35,7 +37,7 @@ export class UploadListComponent extends ComponentBase implements OnInit {
 
       if (fileExtension !== Constants.CSV_EXTENSION) {
         this._bannerService.showError(`${ConstantMessage.FILE_FORMAT_ERROR_MESSAGE} ${file.name}`);
-        this.uploadFileRef.nativeElement.value = '';
+        this.uploadFileRef.nativeElement.value = String.Empty;
         return;
       }
 
@@ -64,13 +66,17 @@ export class UploadListComponent extends ComponentBase implements OnInit {
     reader.readAsText(file);
     reader.onload = (e) => {
       const paymentFile = {} as FileDetail;
-      const t  = reader.result;
-      // paymentFile.fileContent = reader.result;
+      const fileContent  = reader.result;
+      if (typeof fileContent  !== "string"){
+        throw new Error("There was a problem reading the file content")
+      }
+
+      paymentFile.fileContent = btoa(fileContent);
       paymentFile.fileName = file.name;
       // paymentFile.fileStatusId = FileUploadStatus.Pending;
 
       /*this._uploaderService.post(paymentFile)
-        .subscribe((uploadedFile: FileDetail) => {
+        .subscribe((uploadedFile: FileDetail) =>q {
           this.paymentFiles.splice(0, 0, uploadedFile);
           this._bannerService.showSuccess(ConstantMessage.SUCCESS_UPLOAD_MESSAGE);
           this.isLoading = false;
@@ -87,7 +93,7 @@ export class UploadListComponent extends ComponentBase implements OnInit {
             return;
           }
           throw error;
-        });*/
+        });*/      
     };
   }
 
@@ -129,5 +135,4 @@ export class UploadListComponent extends ComponentBase implements OnInit {
         this.isLoading = false;
       });*/
   }
-
 }

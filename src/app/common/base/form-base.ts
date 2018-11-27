@@ -1,5 +1,6 @@
 import { FormGroup } from '@angular/forms';
 import { ComponentBase } from './component.base';
+import '../../common/extensions/string.extensions';
 
 export abstract class FormBase extends ComponentBase {
     public formErrors: any = {};
@@ -17,7 +18,7 @@ export abstract class FormBase extends ComponentBase {
                 return;
             }
             for (const field of Object.keys(this.formErrors)) {
-                this.formErrors[field] = '';
+                this.formErrors[field] = String.Empty;
                 const control = form.get(field);
                 // this.formBusy[field] = control && control.status === Constants.PENDING_STATUS;
 
@@ -25,7 +26,7 @@ export abstract class FormBase extends ComponentBase {
                     const messages = this.validationMessages[field];
 
                     for (const key of Object.keys(control.errors)) {
-                        this.formErrors[field] += messages[key] + ' ';
+                        this.formErrors[field] += messages[key] + String.WhiteSpace;
                     }
                 }
             }

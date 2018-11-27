@@ -1,80 +1,18 @@
-export { };
-
-declare global {
-    interface StringConstructor {
-        Empty: string;
-        WhiteSpace: string;
-        isNullOrEmpty(val: string): boolean;
-        isNullOrWhiteSpace(val: string): boolean;
-        contains(base: string, val: string): boolean;
-        cut(val: string, startIndex: number, endIndex: number): string;
-        remove(base: string, val: string): string;
-        replaceAll(base: string, val: string, replaceWith: string): string;
-    }
-
-    interface String {
-        Empty: string;
-        WhiteSpace: string;
-        isNullOrEmpty(val: string): boolean;
-        isNullOrWhiteSpace(val: string): boolean;
-        contains(base: string, val: string): boolean;
-        cut(val: string, startIndex: number, endIndex: number): string;
-        remove(base: string, val: string): string;
-        replaceAll(base: string, val: string, replaceWith: string): string;
-    }
+interface StringConstructor {
+    Empty: string;
+    WhiteSpace: string;
+    isNullOrEmpty(val: string): boolean;
+    isNullOrWhiteSpace(val: string): boolean;
+    contains(base: string, val: string): boolean;
+    cut(val: string, startIndex: number, endIndex: number): string;
+    remove(base: string, val: string): string;
+    replaceAll(base: string, val: string, replaceWith: string): string;
 }
-
-declare const String: StringConstructor;
-
-// filea.ts
-/*module String {
-    export function isNullOrEmpty(s: string): boolean {
-        return !!s;
-    }
-}
-module mynamespace {
-    // tslint:disable-next-line:no-shadowed-variable
-    export declare var String: {
-        new (value?: any): String;
-        (value?: any): string;
-        prototype: String;
-        fromCharCode(...codes: number[]): string;
-        isNullOrEmpty(s: string): boolean;
-    };
-}*/
-
-/*declare global {
-    interface String {
-        Empty: string;
-        WhiteSpace: string;
-        isNullOrEmpty(val: string): boolean;
-        isNullOrWhiteSpace(val: string): boolean;
-        contains(base: string, val: string): boolean;
-        cut(val: string, startIndex: number, endIndex: number): string;
-        remove(base: string, val: string): string;
-        replaceAll(base: string, val: string, replaceWith: string): string;
-    }
-
-    interface StringConstructor {
-        Empty: string;
-        WhiteSpace: string;
-        isNullOrEmpty(val: string): boolean;
-        isNullOrWhiteSpace(val: string): boolean;
-        contains(base: string, val: string): boolean;
-        cut(val: string, startIndex: number, endIndex: number): string;
-        remove(base: string, val: string): string;
-        replaceAll(base: string, val: string, replaceWith: string): string;
-    }
-}*/
-
-// declare const String: StringConstructor;
 
 String.Empty = '';
 String.WhiteSpace = ' ';
 
 String.isNullOrEmpty = function (val: any): boolean {
-    // tslint:disable-next-line:no-debugger
-    debugger;
     if (val === undefined || val === null || val.trim() === String.Empty) {
         return true;
     }

@@ -6,6 +6,7 @@ import { AuthService, BannerService } from '../../../services';
 import { ModelFormBase, IBuildForm, ConstantMessage, NotFoundError, BadInput } from '../../../common';
 import { IsBusyService } from './../../../common';
 import { UserLogin } from './../../../models';
+import '../../../common/extensions/string.extensions';
 
 @Component({
   selector: 'app-user-login',
@@ -52,8 +53,8 @@ export class UserLoginComponent extends ModelFormBase implements OnInit, IBuildF
 
   public buildForm(): void {
     this.formErrors = {
-      inputEmail: '',
-      inputPassword: ''
+      inputEmail: String.Empty,
+      inputPassword: String.Empty
     };
 
     this.validationMessages = {
