@@ -44,7 +44,6 @@ export class FileService extends DataService {
                             const dateQuery = this.betweenOrEquals(uploadedDateProperty, startDate, uploadedDateProperty, endDate);
                             query = !query ? dateQuery : this.and(query, dateQuery);
                         }
-
                         break;
 
                     case nameof<FileFilter>(f => f.statusFilter):

@@ -66,12 +66,19 @@ export class UploadListComponent extends ComponentBase implements OnInit {
     reader.readAsText(file);
     reader.onload = (e) => {
       const paymentFile = {} as FileDetail;
+<<<<<<< Updated upstream
       const fileContent  = reader.result;
       if (typeof fileContent  !== "string"){
         throw new Error("There was a problem reading the file content")
       }
 
       paymentFile.fileContent = btoa(fileContent);
+=======
+      const t = reader.result;
+      // tslint:disable-next-line:no-debugger
+      debugger;
+      paymentFile.fileContent = btoa(reader.result.toString());
+>>>>>>> Stashed changes
       paymentFile.fileName = file.name;
       // paymentFile.fileStatusId = FileUploadStatus.Pending;
 

@@ -12,27 +12,52 @@
         
         <hr />
 
-        <form>
+        <form #registrationForm="ngForm" (ngSubmit)="register(registrationForm.value)">
           <div class="form-group">
-            <label for="inputEmail">First name</label>
-            <input type="text" class="form-control" id="inputFirstName">
+            <label for="inputFirstName">First name</label>
+            <input type="text" 
+                   ngModel
+                   name="firstName"
+                   class="form-control" 
+                   id="inputFirstName">
           </div>
           <div class="form-group">
             <label for="inputLastName">Last name</label>
-            <input type="text" class="form-control" id="inputLastName">
+            <input type="text" 
+                   class="form-control" 
+                   id="inputLastName"
+                   name="lastname"
+                   ngModel >
           </div>
           <div class="form-group">
             <label for="inputPracticeNumber">Practice number</label>
-            <input type="text" class="form-control" id="inputPracticeNumber">
+            <input type="text" 
+                   class="form-control" 
+                   id="inputPracticeNumber"
+                   name="practiceNumber"
+                   ngModel >
           </div>
           <div class="form-group">
             <label for="inputEmail">Email address</label>
-            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input type="email" 
+                   class="form-control" 
+                   id="inputEmail" 
+                   aria-describedby="emailHelp" 
+                   placeholder="Enter email"
+                   name="email"
+                   ngModel>
+            <small id="emailHelp" 
+                   class="form-text text-muted">We'll never share your email with anyone else.
+            </small>
           </div>
           <div class="form-group">
             <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="password" 
+                   class="form-control" 
+                   id="inputPassword" 
+                   placeholder="Password"
+                   name="password"
+                   ngModel>
             <small id="emailHelp" class="form-text text-muted">Password (6 or more characters).</small>
           </div>
 
@@ -45,9 +70,12 @@
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
           </div> -->
           <div class="form-group">
-            <small class="form-text text-muted text-center">By clicking Join now, you agree to the MedicalBilingSystem User Agreement, Privacy Policy, and Cookie Policy.</small>
+            <small class="form-text text-muted text-center">
+              By clicking Join now, you agree to the MedicalBilingSystem User Agreement, Privacy Policy, and Cookie Policy.
+            </small>
             <br />
-            <button type="submit" class="btn btn-primary btn-block">
+            <button type="submit" 
+                     class="btn btn-primary btn-block">
               Join now
             </button>
           </div>

@@ -80,9 +80,9 @@ export class DataService extends UrlBuilderService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('accept', 'application/json');
-    /*headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    headers.append('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');*/
+    headers.append('Access-Control-Allow-Origin', '*');
+    // headers.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    // headers.append('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
 
     const token = localStorage.getItem(Constants.TOKEN);
 
@@ -101,6 +101,9 @@ export class DataService extends UrlBuilderService {
   private getPostHeader(appendToken: boolean, contentType: ContentType = ContentType.Json): Headers {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
+    // headers.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+   // headers.append('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
 
     switch (contentType) {
       case ContentType.Json:

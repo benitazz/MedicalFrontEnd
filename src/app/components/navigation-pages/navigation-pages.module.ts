@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   imports: [
@@ -11,12 +12,14 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
   declarations: [
     HomeComponent,
     AboutComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    NotFoundComponent
   ],
   exports: [
     HomeComponent,
     AboutComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    NotFoundComponent
   ]
 })
 export class NavigationPagesModule { }

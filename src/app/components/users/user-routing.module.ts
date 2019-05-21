@@ -16,6 +16,16 @@ const userRoutes: Routes = [
   { path: 'forgotpassword', component: ForgotPasswordComponent },
   { path: 'resetpassword', component: ResetPasswordComponent },
   { path: 'changepassword', component: ChangePasswordComponent }
+
+  /*{ path: 'login',
+    component: UserLoginComponent,
+    children: [{
+       path: 'registration',
+       component: UserRegistrationComponent }
+    ]},
+  { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path: 'resetpassword', component: ResetPasswordComponent },
+  { path: 'changepassword', component: ChangePasswordComponent }*/
 ];
 
 @NgModule({

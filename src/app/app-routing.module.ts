@@ -8,6 +8,7 @@ import { ApproveListComponent } from './components/file-management/approve/appro
 import { ApproveDetailsComponent } from './components/file-management/approve/approve-details/approve-details.component';
 import { ContactUsComponent } from './components/navigation-pages/contact-us/contact-us.component';
 import { AboutComponent } from './components/navigation-pages/about/about.component';
+import { NotFoundComponent } from './components/navigation-pages/not-found/not-found.component';
 
 const routes: Routes = [
   /*{
@@ -51,13 +52,14 @@ const routes: Routes = [
     component: ContactUsComponent
   },
 
-  {
-    path:'aboutUs',
-    component: AboutComponent
-  },
+  // {
+  //   path:'aboutUs',
+  //   component: AboutComponent
+  // },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' }
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({

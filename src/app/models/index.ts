@@ -33,5 +33,6 @@ export * from './users/user';
 export * from './auth/auth-token';
 export * from './users/reset-password';
 export * from './users/forgot-password';
+export * from './users/registration';
 
 

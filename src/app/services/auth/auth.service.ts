@@ -3,7 +3,7 @@ import { Constants } from '../../common/constants/constant';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserLogin, ResetPassword, ForgotPassword, User } from '../../models';
+import { UserLogin, ResetPassword, Registration, ForgotPassword, User } from '../../models';
 import { Api, ConstantRoutes } from '../../common';
 // import { CurrentUser } from '../../common/helpers/token-decoder.helper';
 import { isTokenExpired, CurrentUser } from './../../common/helpers/token-decoder.helper';
@@ -52,13 +52,20 @@ export class AuthService extends DataService {
   }
 
   public forgotPassword(forgotPassword: ForgotPassword): Observable<any> {
+    // tslint:disable-next-line:no-debugger
+    debugger;
     const url = this.buildUrl(Api.USER_FORGOT_PASSWORD);
     return this.post(forgotPassword, url, false);
   }
 
-  public resetPassword(resetPassword: ResetPassword): Observable<any> {
-    const url = this.buildUrl(Api.USER_REST_PASSWORD);
-    return this.post(resetPassword, url, false);
+  public resetPassword(forgotPassword: ForgotPassword): Observable<any> {
+    const url = this.buildUrl(Api.USER_FORGOT_PASSWORD);
+    return this.post(forgotPassword, url, false);
+  }
+
+  public registration(registration: Registration): Observable<any> {
+    const url = this.buildUrl(Api.USER_REGISTRATION);
+    return this.post(registration, url, false);
   }
 
   public logout(): void {

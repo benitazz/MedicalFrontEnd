@@ -58,8 +58,12 @@
                 <!-- </show-hide-password> -->
               </div>
               <inline-message [message]="formErrors.inputPassword"></inline-message>
+<<<<<<< Updated upstream
               <div class="help-block text-right">
                 <a routerLink="/forgotpassword">Forgot the password ?</a></div>
+=======
+              <div class="help-block text-right"><a [routerLink]="['/forgotpassword']">Forgot the password ?</a></div>
+>>>>>>> Stashed changes
             </div>
 
             <div class="form-group">

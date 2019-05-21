@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { String, StringBuilder } from 'typescript-string-operations';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { String, StringBuilder } from 'typescript-string-operations';
 })
 export class AppComponent {
   title = 'MedicalBilingFrontEnd';
-  
 }

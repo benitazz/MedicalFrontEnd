@@ -32,7 +32,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^1.9.1",
     "jwt-decode": "^2.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.22.2",
     "mydaterangepicker": "^4.2.1",
     "ngx-bootstrap": "^3.0.1",
     "ngx-mydatepicker": "^2.4.9",
@@ -45,7 +45,11 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
+<<<<<<< Updated upstream
+    "@angular/cli": "^7.0.6",
+=======
     "@angular/cli": "^7.3.6",
+>>>>>>> Stashed changes
     "@angular/compiler-cli": "^7.0.1",
     "@angular/language-service": "^7.0.1",
     "@types/jasmine": "~2.8.6",

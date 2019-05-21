@@ -15,6 +15,7 @@ import { ControlsModule } from './controls/controls.module';
 import { NavigationPagesModule } from './components/navigation-pages/navigation-pages.module';
 
 import { DirectivesModule } from './directives/directives.module';
+import { RouterModule } from '@angular/router';
 
 import {
   AuthGuard, AuthService, BannerService,
@@ -41,7 +42,8 @@ import { DialogService, IsBusyService } from './common';
     ControlsModule,
     NavigationPagesModule,
     DirectivesModule,
-    HttpModule
+    HttpModule,
+    RouterModule
   ],
   providers: [
     AuthGuard,
